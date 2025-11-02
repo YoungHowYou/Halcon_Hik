@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.2" halcon_version="23.11.0.0">
+<procedure name="main">
+<interface/>
+<body>
+<l>create_message_queue (QueueHandle)</l>
+<l>Hik_openCamera ( 'ZX', 1, QueueHandle, Handle)</l>
+<l>Hik_StartPhotograph (Handle)</l>
+<l>Hik_SetCommandParameters (Handle, 'TriggerSoftware')</l>
+<l>Hik_SetfloatParameters (Handle, 'ExposureTime', 60000)</l>
+<l>while(1)</l>
+<l>    dequeue_message (QueueHandle, 'timeout', 1, MessageHandle)</l>
+<l>    get_message_obj (ObjectData, MessageHandle, 'image')</l>
+<l>    Hik_SetCommandParameters (Handle, 'TriggerSoftware')</l>
+<c></c>
+<l>endwhile</l>
+<l>Hik_StopPhotograph (Handle)</l>
+<l>Hik_closeCamera (Handle)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>

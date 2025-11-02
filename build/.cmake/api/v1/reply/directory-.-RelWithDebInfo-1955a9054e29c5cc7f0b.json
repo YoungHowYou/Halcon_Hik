@@ -1,0 +1,191 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"HALCON_AddExtensionPackage"
+		],
+		"files" : 
+		[
+			"C:/Users/Public/Documents/MVTec/HALCON-23.11-Progress/examples/cmake/UseHALCON.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 60,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 316,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 363,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 473,
+				"parent" : 1
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/help",
+			"paths" : 
+			[
+				"build/help/operators_en_US.idx",
+				"build/help/operators_en_US.key",
+				"build/help/operators_en_US.num",
+				"build/help/operators_en_US.ref",
+				"build/help/operators_en_US.sta"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/doc/html/reference",
+			"paths" : 
+			[
+				"build/doc/html/reference/index.html",
+				"build/doc/html/reference/index_by_name.html",
+				"build/doc/html/reference/index_classes.html",
+				"build/doc/html/reference/Hik_StopPhotograph.html",
+				"build/doc/html/reference/Hik_closeCamera.html",
+				"build/doc/html/reference/Hik_StartPhotograph.html",
+				"build/doc/html/reference/Hik_SetfloatParameters.html",
+				"build/doc/html/reference/Hik_SetCommandParameters.html",
+				"build/doc/html/reference/Hik_SetIntParameters.html",
+				"build/doc/html/reference/Hik_SetEnumsParameters.html",
+				"build/doc/html/reference/Hik_openCamera.html",
+				"build/doc/html/reference/Hik_openCaptureCard.html",
+				"build/doc/html/reference/Hik_SetBoolParameters.html",
+				"build/doc/html/reference/HHIK.html",
+				"build/doc/html/reference/toc_userextensions.html"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/lib/x64-win64",
+			"paths" : 
+			[
+				"D:/desktop/source/Halcon_Extension/Halcon_Hik/bin/RelWithDebInfo/Halcon_Hik.lib"
+			],
+			"targetId" : "Halcon_Hik::@6890427a1f51a3e7e1df",
+			"targetIndex" : 1,
+			"targetIsImportLibrary" : true,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/bin/x64-win64",
+			"paths" : 
+			[
+				"D:/desktop/source/Halcon_Extension/Halcon_Hik/bin/RelWithDebInfo/Halcon_Hik.dll"
+			],
+			"targetId" : "Halcon_Hik::@6890427a1f51a3e7e1df",
+			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/lib/x64-win64",
+			"paths" : 
+			[
+				"D:/desktop/source/Halcon_Extension/Halcon_Hik/bin/RelWithDebInfo/Halcon_Hikc.lib"
+			],
+			"targetId" : "Halcon_Hikcint::@6890427a1f51a3e7e1df",
+			"targetIndex" : 5,
+			"targetIsImportLibrary" : true,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/bin/x64-win64",
+			"paths" : 
+			[
+				"D:/desktop/source/Halcon_Extension/Halcon_Hik/bin/RelWithDebInfo/Halcon_Hikc.dll"
+			],
+			"targetId" : "Halcon_Hikcint::@6890427a1f51a3e7e1df",
+			"targetIndex" : 5,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/include",
+			"paths" : 
+			[
+				"build/HCHalcon_Hik.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/lib/x64-win64",
+			"paths" : 
+			[
+				"D:/desktop/source/Halcon_Extension/Halcon_Hik/bin/RelWithDebInfo/Halcon_Hikcpp.lib"
+			],
+			"targetId" : "Halcon_Hikcppint::@6890427a1f51a3e7e1df",
+			"targetIndex" : 6,
+			"targetIsImportLibrary" : true,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/bin/x64-win64",
+			"paths" : 
+			[
+				"D:/desktop/source/Halcon_Extension/Halcon_Hik/bin/RelWithDebInfo/Halcon_Hikcpp.dll"
+			],
+			"targetId" : "Halcon_Hikcppint::@6890427a1f51a3e7e1df",
+			"targetIndex" : 6,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "Halcon_Hik/include",
+			"paths" : 
+			[
+				"build/HCPPHalcon_Hik.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}
