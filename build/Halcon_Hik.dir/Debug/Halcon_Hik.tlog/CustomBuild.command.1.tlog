@@ -1,10 +1,10 @@
-^D:\DESKTOP\SOURCE\HALCON_HIK\BUILD\CMAKEFILES\18C73F9B2DF9996C12A7320499E6643B\HHALCON_HIK.C.RULE
+^C:\USERS\YOUNG\DESKTOP\SOURCE\HALCON_EXTENSION\HALCON_HIK\BUILD\CMAKEFILES\56F0DFAB7F1AC17313D1C145EFDAAE26\HHALCON_HIK.C.RULE
 setlocal
-cd D:\desktop\source\Halcon_Hik\build
+cd C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\build
 if %errorlevel% neq 0 goto :cmEnd
-D:
+C:
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\MVTec\HALCON-23.11-Progress\bin\x64-win64\hcomp.exe" -u -H -pHalcon_Hik D:\desktop\source\Halcon_Hik\def\Halcon_Hik.def
+C:\Users\young\AppData\Local\Programs\MVTec\HALCON-24.11-Progress-Steady\bin\x64-win64\hcomp.exe -u -H -pHalcon_Hik C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\def\Halcon_Hik.def
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -12,9 +12,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^D:\DESKTOP\SOURCE\HALCON_HIK\CMAKELISTS.TXT
+^C:\USERS\YOUNG\DESKTOP\SOURCE\HALCON_EXTENSION\HALCON_HIK\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/desktop/source/Halcon_Hik -BD:/desktop/source/Halcon_Hik/build --check-stamp-file D:/desktop/source/Halcon_Hik/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/young/Desktop/Source/Halcon_Extension/Halcon_Hik -BC:/Users/young/Desktop/Source/Halcon_Extension/Halcon_Hik/build --check-stamp-file C:/Users/young/Desktop/Source/Halcon_Extension/Halcon_Hik/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

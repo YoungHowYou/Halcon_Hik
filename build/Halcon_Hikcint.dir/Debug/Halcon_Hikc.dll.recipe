@@ -2,22 +2,22 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\desktop\source\Halcon_Hik\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\desktop\source\Halcon_Hik\build\x64\Debug\Halcon_Hik_help_en_US</FullPath>
+      <FullPath>C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\build\x64\Debug\Halcon_Hik_help_en_US</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\desktop\source\Halcon_Hik\build\x64\Debug\Halcon_Hik_help</FullPath>
+      <FullPath>C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\build\x64\Debug\Halcon_Hik_help</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\desktop\source\Halcon_Hik\build\x64\Debug\Halcon_Hik_html</FullPath>
+      <FullPath>C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\build\x64\Debug\Halcon_Hik_html</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\desktop\source\Halcon_Hik\bin\Halcon_Hik.dll</FullPath>
+      <FullPath>C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\bin\Halcon_Hik.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\desktop\source\Halcon_Hik\bin\Halcon_Hikc.dll</FullPath>
+      <FullPath>C:\Users\young\Desktop\Source\Halcon_Extension\Halcon_Hik\bin\Halcon_Hikc.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

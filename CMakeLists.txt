@@ -32,7 +32,6 @@ endif()
 
 
 project(Halcon_Hik C CXX )
-
 set(ProjectName Halcon_Hik)
 set(CMAKE_BUILD_TYPE Debug)
 # 禁止生成 Debug/Release 子目录，直接输出到 bin
@@ -79,6 +78,7 @@ HALCON_AddExtensionPackage(Halcon_Hik
     Hik_openCaptureCard
     Hik_SetBoolParameters
 )
+
 ##三方库包含
 set(HALCON_ROOT $ENV{HALCONROOT})   # 转成 CMake 变量，后面用着方便
 # Halcon 头文件目录
