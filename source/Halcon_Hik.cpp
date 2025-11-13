@@ -6,7 +6,6 @@
 #define H_HikCamera_SEM_TYPE "HikCamera"
 using namespace HalconCpp;
 
-
 extern "C"
 {
     typedef struct
@@ -36,26 +35,24 @@ extern "C"
 
 struct MyContext
 {
-    int     分时频闪数;
-    char    相机用户名[64];
-    HTuple  海康相机采集队列;      // 直接放对象
+    int 分时频闪数;
+    char 相机用户名[64];
+    HTuple 海康相机采集队列; // 直接放对象
 
-    MyContext(int flash, const char* name, const HTuple& queue)
+    MyContext(int flash, const char *name, const HTuple &queue)
         : 分时频闪数(flash), 海康相机采集队列(queue)
     {
         strcpy_s(相机用户名, name);
     }
 };
 
-
-
 void __stdcall 海康_回调取图函数(unsigned char *图像指针, MV_FRAME_OUT_INFO_EX *帧信息, void *用户自定义数据容器)
 {
 
     HObject ho_Image;
     HTuple hv_MessageHandle;
-    //MyContext *ctx = (MyContext *)用户自定义数据容器;
-     MyContext* ctx = static_cast<MyContext*>(用户自定义数据容器);
+    // MyContext *ctx = (MyContext *)用户自定义数据容器;
+    MyContext *ctx = static_cast<MyContext *>(用户自定义数据容器);
     // int *用户自定义数据 = reinterpret_cast<int *>(用户自定义数据容器);
     if (帧信息->enPixelType == PixelType_Gvsp_Mono8)
     {
@@ -98,19 +95,28 @@ Herror 海康_打开相机(Hproc_handle proc_handle)
     void *Hik_handle;
     int nRet;
     int i;
-
-    MV_CC_DEVICE_INFO_LIST m_stDevList = {0};
-
-    // 枚举子网内指定的传输协议对应的所有设备
-    unsigned int nTLayerType = MV_GIGE_DEVICE | MV_USB_DEVICE; //
-    nRet = MV_CC_EnumDevices(nTLayerType, &m_stDevList);
-    if (MV_OK != nRet)
+    int EnumDevices_num=0;
+    MV_CC_DEVICE_INFO_LIST m_stDevList;
+    memset(&m_stDevList, 0, sizeof(MV_CC_DEVICE_INFO_LIST));
+    while (EnumDevices_num < 20)
     {
-        return nRet;
+       
+        nRet = MV_CC_EnumDevices(MV_GIGE_DEVICE | MV_USB_DEVICE | MV_GENTL_CAMERALINK_DEVICE | MV_GENTL_CXP_DEVICE | MV_GENTL_XOF_DEVICE, &m_stDevList);
+        EnumDevices_num=EnumDevices_num+1;
+        // nRet = MV_CC_EnumDevices(nTLayerType, &m_stDevList);
+        if (MV_OK != nRet)
+        {
+            return 10000 * H__LINE__;
+        }
+        if (m_stDevList.nDeviceNum != 0)
+        {
+            break;
+        }
+        Sleep(10);
     }
-    if (m_stDevList.nDeviceNum == 0)
+    if( m_stDevList.nDeviceNum == 0)
     {
-        return nRet;
+       return 10086;
     }
     int index = -1;
     for (int i = 0; i <= m_stDevList.nDeviceNum - 1; i++)
@@ -127,7 +133,7 @@ Herror 海康_打开相机(Hproc_handle proc_handle)
 
     if (index == -1)
     {
-        return __LINE__;
+        return 10000 * H__LINE__;
     }
     MV_CC_DEVICE_INFO m_stDevInfo = {0};
     memcpy(&m_stDevInfo, m_stDevList.pDeviceInfo[index], sizeof(MV_CC_DEVICE_INFO));
@@ -136,19 +142,19 @@ Herror 海康_打开相机(Hproc_handle proc_handle)
     nRet = MV_CC_OpenDevice(Hik_handle, MV_ACCESS_Exclusive, 0);
     if (MV_OK != nRet)
     {
-        return  nRet;
+        return 10000 * H__LINE__;
     }
     /* 6. 构造并填充上下文 */
     // MyContext *ctx = (MyContext *)malloc(sizeof(MyContext));
     // ctx->分时频闪数 = 分时频闪数.par.l;
     // strcpy(ctx->相机用户名, 相机用户名.par.s);
     // ctx->海康相机采集队列 = &相机采集队列;
-    MyContext* ctx = new MyContext(分时频闪数.par.l, 相机用户名.par.s, 相机采集队列);
+    MyContext *ctx = new MyContext(分时频闪数.par.l, 相机用户名.par.s, 相机采集队列);
 
     nRet = MV_CC_RegisterImageCallBackEx(Hik_handle, 海康_回调取图函数, ctx);
     if (MV_OK != nRet)
     {
-        return   nRet;
+        return 10000 * H__LINE__;
     }
 
     HUserHandleData **handle_data;
@@ -186,7 +192,7 @@ Herror 海康_停止拍摄(Hproc_handle proc_handle)
     }
     else
     {
-        return  函数返回值;
+        return 函数返回值;
     }
 }
 Herror 海康_关闭相机(Hproc_handle proc_handle)
@@ -253,7 +259,7 @@ Herror 海康_设置枚举数类型参数(Hproc_handle proc_handle)
     }
     else
     {
-        return  函数返回值;
+        return 函数返回值;
     }
 }
 Herror 海康_设置布尔数类型参数(Hproc_handle proc_handle)
@@ -276,7 +282,7 @@ Herror 海康_设置布尔数类型参数(Hproc_handle proc_handle)
         }
         else
         {
-            return  函数返回值;
+            return 函数返回值;
         }
     }
     else if (参数值.par.l == 1)
@@ -288,7 +294,7 @@ Herror 海康_设置布尔数类型参数(Hproc_handle proc_handle)
         }
         else
         {
-            return  函数返回值;
+            return 函数返回值;
         }
     }
     else
@@ -352,4 +358,3 @@ Herror 海康_打开采集卡(Hproc_handle proc_handle)
     return 正确;
     //}
 }
-
