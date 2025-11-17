@@ -87,6 +87,10 @@ set(HALCON_INCLUDE_DIR ${HALCON_ROOT}/include/halconcpp)#HALCON_INCLUDE_DIR变�
 set(HALCON_LIB_DIR ${HALCON_ROOT}/lib/x64-win64)#
 file(GLOB_RECURSE PROJECT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
 target_sources(${ProjectName} PRIVATE ${PROJECT_HEADERS})
+file(GLOB DEF_FILES "${CMAKE_CURRENT_SOURCE_DIR}/def/*.def")
+# 把 .def 文件追加到已有目标，仅供 IDE 显示
+target_sources(${ProjectName} PRIVATE ${DEF_FILES})
+
 
 target_include_directories(${ProjectName} 
     PUBLIC
