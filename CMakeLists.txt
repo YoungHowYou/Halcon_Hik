@@ -87,9 +87,14 @@ set(HALCON_INCLUDE_DIR ${HALCON_ROOT}/include/halconcpp)#HALCON_INCLUDE_DIR变�
 set(HALCON_LIB_DIR ${HALCON_ROOT}/lib/x64-win64)#
 file(GLOB_RECURSE PROJECT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
 target_sources(${ProjectName} PRIVATE ${PROJECT_HEADERS})
+# 1. 收集 .def 文件
 file(GLOB DEF_FILES "${CMAKE_CURRENT_SOURCE_DIR}/def/*.def")
-# 把 .def 文件追加到已有目标，仅供 IDE 显示
+# 2. 添加到目标，但不参与编译（通过 HEADER_FILE_ONLY 属性）
 target_sources(${ProjectName} PRIVATE ${DEF_FILES})
+# 3. 设置属性：只显示，不编译、不链接
+set_source_files_properties(${DEF_FILES} PROPERTIES
+    HEADER_FILE_ONLY TRUE   # 关键：不让它参与构建
+)
 
 
 target_include_directories(${ProjectName} 
