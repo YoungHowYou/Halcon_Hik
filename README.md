@@ -1,2 +1,3 @@
 # Halcon_Hik
 halcon的海康相机拓展包
+可以让halcon调用MVS的原生接口，使用前要安装海康mvs，系统里面增加环境变量名HALCONEXTENSIONS的环境变量，然后把这个包路径填入即可，项目里有使用例程
