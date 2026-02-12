@@ -1,5 +1,10 @@
 nDeviceIndex,Name:userextensions:UserExtensions:
 nDeviceIndex,strKey,nValue:userextensions:UserExtensions:
+nDeviceIndex,strKey,strValue:userextensions:UserExtensions:
+nDeviceIndex,strKey,bValue:userextensions:UserExtensions:
+nDeviceIndex,strKey,nCurValue:userextensions:UserExtensions:
+nDeviceIndex,strKey,fCurValue,fMax,fMin:userextensions:UserExtensions:
+nDeviceIndex,strKey,nCurValue,nMax,nMin,nInc:userextensions:UserExtensions:
 Name,TimeSharingFlicker,QueueHandle,CameraHandle:userextensions:UserExtensions:
 nDeviceIndex,strKey,nValue:userextensions:UserExtensions:
 nDeviceIndex,strKey,nValue:userextensions:UserExtensions:
