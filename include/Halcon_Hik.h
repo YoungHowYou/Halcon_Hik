@@ -16,6 +16,11 @@ EXPORTS_API Herror 海康_设置命令类型参数(Hproc_handle proc_handle);
 EXPORTS_API Herror 海康_设置枚举数类型参数(Hproc_handle proc_handle);
 EXPORTS_API Herror 海康_设置布尔数类型参数(Hproc_handle proc_handle);
 EXPORTS_API Herror 海康_设置整数类型参数(Hproc_handle proc_handle);
+EXPORTS_API Herror 海康_获取浮点数类型参数(Hproc_handle proc_handle);
+EXPORTS_API Herror 海康_获取枚举数类型参数(Hproc_handle proc_handle);
+EXPORTS_API Herror 海康_获取布尔数类型参数(Hproc_handle proc_handle);
+EXPORTS_API Herror 海康_获取整数类型参数(Hproc_handle proc_handle);
+EXPORTS_API Herror 海康_获取字符串类型参数(Hproc_handle proc_handle);
 #pragma endregion
 
 

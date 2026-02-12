@@ -315,13 +315,272 @@ parameter
   sem_type:           handle;
   type_list:          handle;
 
-
 parameter
   CameraHandle:       output_control;
   sem_type:           handle;
   type_list:          handle;
   default_type:       handle;
   multivalue:         false;
+
+Hik_GetIntParameters<- cHik_GetIntParameters[::nDeviceIndex, strKey:nCurValue,nMax,nMin,nInc]
+short.german
+  Get Integer Parameter.;
+  
+short.english
+  Get Integer Parameter.;
+
+module
+  foundation;
+
+chapter.german
+  BenutzerErweiterungen;
+
+chapter.english
+  UserExtensions;
+
+keywords.english
+  UserExtensions;
+
+parallelization
+  process_exclusively: false;
+  process_locally:     false;
+  process_mutual:      false;
+  method:              none;
+parameter
+  nDeviceIndex:       input_control;
+  default_type:       handle;
+  multivalue:         false;
+  sem_type:           handle;
+  type_list:          handle;
+
+parameter
+  strKey:             input_control;
+  default_type:       string;
+  multivalue:         false;
+  sem_type:           string;
+  type_list:          string;
+
+parameter
+  nCurValue:          output_control;
+  default_type:       integer;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          integer;
+
+parameter
+  nMax:               output_control;
+  default_type:       integer;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          integer;
+
+parameter
+  nMin:               output_control;
+  default_type:       integer;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          integer;
+
+parameter
+  nInc:               output_control;
+  default_type:       integer;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          integer;
+
+Hik_GetFloatParameters<- cHik_GetFloatParameters[::nDeviceIndex, strKey:fCurValue,fMax,fMin]
+short.german
+  Get Float Parameter.;
+  
+short.english
+  Get Float Parameter.;
+
+module
+  foundation;
+
+chapter.german
+  BenutzerErweiterungen;
+
+chapter.english
+  UserExtensions;
+
+keywords.english
+  UserExtensions;
+
+parallelization
+  process_exclusively: false;
+  process_locally:     false;
+  process_mutual:      false;
+  method:              none;
+parameter
+  nDeviceIndex:       input_control;
+  default_type:       handle;
+  multivalue:         false;
+  sem_type:           handle;
+  type_list:          handle;
+
+parameter
+  strKey:             input_control;
+  default_type:       string;
+  multivalue:         false;
+  sem_type:           string;
+  type_list:          string;
+
+parameter
+  fCurValue:          output_control;
+  default_type:       real;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          real;
+
+parameter
+  fMax:               output_control;
+  default_type:       real;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          real;
+
+parameter
+  fMin:               output_control;
+  default_type:       real;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          real;
+
+Hik_GetEnumsParameters<- cHik_GetEnumsParameters[::nDeviceIndex, strKey:nCurValue]
+short.german
+  Get Enum Parameter.;
+  
+short.english
+  Get Enum Parameter.;
+
+module
+  foundation;
+
+chapter.german
+  BenutzerErweiterungen;
+
+chapter.english
+  UserExtensions;
+
+keywords.english
+  UserExtensions;
+
+parallelization
+  process_exclusively: false;
+  process_locally:     false;
+  process_mutual:      false;
+  method:              none;
+parameter
+  nDeviceIndex:       input_control;
+  default_type:       handle;
+  multivalue:         false;
+  sem_type:           handle;
+  type_list:          handle;
+
+parameter
+  strKey:             input_control;
+  default_type:       string;
+  multivalue:         false;
+  sem_type:           string;
+  type_list:          string;
+
+parameter
+  nCurValue:          output_control;
+  default_type:       integer;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          integer;
+
+Hik_GetBoolParameters<- cHik_GetBoolParameters[::nDeviceIndex, strKey:bValue]
+short.german
+  Get Bool Parameter.;
+  
+short.english
+  Get Bool Parameter.;
+
+module
+  foundation;
+
+chapter.german
+  BenutzerErweiterungen;
+
+chapter.english
+  UserExtensions;
+
+keywords.english
+  UserExtensions;
+
+parallelization
+  process_exclusively: false;
+  process_locally:     false;
+  process_mutual:      false;
+  method:              none;
+parameter
+  nDeviceIndex:       input_control;
+  default_type:       handle;
+  multivalue:         false;
+  sem_type:           handle;
+  type_list:          handle;
+
+parameter
+  strKey:             input_control;
+  default_type:       string;
+  multivalue:         false;
+  sem_type:           string;
+  type_list:          string;
+
+parameter
+  bValue:             output_control;
+  default_type:       integer;
+  multivalue:         false;
+  sem_type:           number;
+  type_list:          integer;
+
+Hik_GetStringParameters<- cHik_GetStringParameters[::nDeviceIndex, strKey:strValue]
+short.german
+  Get String Parameter.;
+  
+short.english
+  Get String Parameter.;
+
+module
+  foundation;
+
+chapter.german
+  BenutzerErweiterungen;
+
+chapter.english
+  UserExtensions;
+
+keywords.english
+  UserExtensions;
+
+parallelization
+  process_exclusively: false;
+  process_locally:     false;
+  process_mutual:      false;
+  method:              none;
+parameter
+  nDeviceIndex:       input_control;
+  default_type:       handle;
+  multivalue:         false;
+  sem_type:           handle;
+  type_list:          handle;
+
+parameter
+  strKey:             input_control;
+  default_type:       string;
+  multivalue:         false;
+  sem_type:           string;
+  type_list:          string;
+
+parameter
+  strValue:           output_control;
+  default_type:       string;
+  multivalue:         false;
+  sem_type:           string;
+  type_list:          string;
 
 Hik_SetBoolParameters<- cHik_SetBoolParameters[::nDeviceIndex, strKey, nValue:]
 short.german

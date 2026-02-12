@@ -322,6 +322,150 @@ Herror 海康_设置整数类型参数(Hproc_handle proc_handle)
         return 函数返回值;
     }
 }
+Herror 海康_获取整数类型参数(Hproc_handle proc_handle)
+{
+    HUserHandleData *handle_data;
+    Hcpar 参数名称;
+    HAllocStringMem(proc_handle, 64);
+    HGetCElemH1(proc_handle, 1, &HandleTypeUser, &handle_data);
+    HGetSPar(proc_handle, 2, STRING_PAR, &参数名称, 1);
+
+    MVCC_INTVALUE_EX 参数值结构体;
+    memset(&参数值结构体, 0, sizeof(MVCC_INTVALUE_EX));
+
+    int 函数返回值 = MV_CC_GetIntValueEx(handle_data->海康相机句柄, 参数名称.par.s, &参数值结构体);
+    if (MV_OK == 函数返回值)
+    {
+        // 输出当前值、最大值、最小值、步长
+        Hcpar 输出参数值[4];
+        输出参数值[0].par.l = (Hlong)参数值结构体.nCurValue;
+        输出参数值[0].type = LONG_PAR;
+        输出参数值[1].par.l = (Hlong)参数值结构体.nMax;
+        输出参数值[1].type = LONG_PAR;
+        输出参数值[2].par.l = (Hlong)参数值结构体.nMin;
+        输出参数值[2].type = LONG_PAR;
+        输出参数值[3].par.l = (Hlong)参数值结构体.nInc;
+        输出参数值[3].type = LONG_PAR;
+        HPutCPar(proc_handle, 3, 输出参数值, 4);
+        return 正确;
+    }
+    else
+    {
+        return 函数返回值;
+    }
+}
+
+Herror 海康_获取浮点数类型参数(Hproc_handle proc_handle)
+{
+    HUserHandleData *handle_data;
+    Hcpar 参数名称;
+    HAllocStringMem(proc_handle, 64);
+    HGetCElemH1(proc_handle, 1, &HandleTypeUser, &handle_data);
+    HGetSPar(proc_handle, 2, STRING_PAR, &参数名称, 1);
+
+    MVCC_FLOATVALUE 参数值结构体;
+    memset(&参数值结构体, 0, sizeof(MVCC_FLOATVALUE));
+
+    int 函数返回值 = MV_CC_GetFloatValue(handle_data->海康相机句柄, 参数名称.par.s, &参数值结构体);
+    if (MV_OK == 函数返回值)
+    {
+        // 输出当前值、最大值、最小值
+        Hcpar 输出参数值[3];
+        输出参数值[0].par.d = (double)参数值结构体.fCurValue;
+        输出参数值[0].type = DOUBLE_PAR;
+        输出参数值[1].par.d = (double)参数值结构体.fMax;
+        输出参数值[1].type = DOUBLE_PAR;
+        输出参数值[2].par.d = (double)参数值结构体.fMin;
+        输出参数值[2].type = DOUBLE_PAR;
+        HPutCPar(proc_handle, 3, 输出参数值, 3);
+        return 正确;
+    }
+    else
+    {
+        return 函数返回值;
+    }
+}
+
+Herror 海康_获取枚举数类型参数(Hproc_handle proc_handle)
+{
+    HUserHandleData *handle_data;
+    Hcpar 参数名称;
+    HAllocStringMem(proc_handle, 64);
+    HGetCElemH1(proc_handle, 1, &HandleTypeUser, &handle_data);
+    HGetSPar(proc_handle, 2, STRING_PAR, &参数名称, 1);
+
+    MVCC_ENUMVALUE 参数值结构体;
+    memset(&参数值结构体, 0, sizeof(MVCC_ENUMVALUE));
+
+    int 函数返回值 = MV_CC_GetEnumValue(handle_data->海康相机句柄, 参数名称.par.s, &参数值结构体);
+    if (MV_OK == 函数返回值)
+    {
+        // 输出当前值
+        Hcpar 输出参数值;
+        输出参数值.par.l = (Hlong)参数值结构体.nCurValue;
+        输出参数值.type = LONG_PAR;
+        HPutCPar(proc_handle, 3, &输出参数值, 1);
+        return 正确;
+    }
+    else
+    {
+        return 函数返回值;
+    }
+}
+
+Herror 海康_获取布尔数类型参数(Hproc_handle proc_handle)
+{
+    HUserHandleData *handle_data;
+    Hcpar 参数名称;
+    HAllocStringMem(proc_handle, 64);
+    HGetCElemH1(proc_handle, 1, &HandleTypeUser, &handle_data);
+    HGetSPar(proc_handle, 2, STRING_PAR, &参数名称, 1);
+
+    bool 参数值;
+
+    int 函数返回值 = MV_CC_GetBoolValue(handle_data->海康相机句柄, 参数名称.par.s, &参数值);
+    if (MV_OK == 函数返回值)
+    {
+        // 输出当前值
+        Hcpar 输出参数值;
+        输出参数值.par.l = 参数值 ? 1 : 0;
+        输出参数值.type = LONG_PAR;
+        HPutCPar(proc_handle, 3, &输出参数值, 1);
+        return 正确;
+    }
+    else
+    {
+        return 函数返回值;
+    }
+}
+
+Herror 海康_获取字符串类型参数(Hproc_handle proc_handle)
+{
+    HUserHandleData *handle_data;
+    Hcpar 参数名称;
+    HAllocStringMem(proc_handle, 64);
+    HGetCElemH1(proc_handle, 1, &HandleTypeUser, &handle_data);
+    HGetSPar(proc_handle, 2, STRING_PAR, &参数名称, 1);
+
+    MVCC_STRINGVALUE 参数值结构体;
+    memset(&参数值结构体, 0, sizeof(MVCC_STRINGVALUE));
+
+    int 函数返回值 = MV_CC_GetStringValue(handle_data->海康相机句柄, 参数名称.par.s, &参数值结构体);
+    if (MV_OK == 函数返回值)
+    {
+        // 输出当前字符串值
+        Hcpar 输出参数值;
+        输出参数值.par.s = 参数值结构体.chCurValue;
+        输出参数值.type = STRING_PAR;
+        HPutCPar(proc_handle, 3, &输出参数值, 1);
+        return 正确;
+    }
+    else
+    {
+        return 函数返回值;
+    }
+}
+
 Herror 海康_打开采集卡(Hproc_handle proc_handle)
 {
 

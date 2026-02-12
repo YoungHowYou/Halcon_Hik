@@ -42,3 +42,23 @@
  {
   return 海康_设置整数类型参数( proc_handle);
  }
+ Herror cHik_GetIntParameters(Hproc_handle proc_handle)
+ {
+  return 海康_获取整数类型参数( proc_handle);
+ }
+ Herror cHik_GetFloatParameters(Hproc_handle proc_handle)
+ {
+  return 海康_获取浮点数类型参数( proc_handle);
+ }
+ Herror cHik_GetEnumsParameters(Hproc_handle proc_handle)
+ {
+  return 海康_获取枚举数类型参数( proc_handle);
+ }
+ Herror cHik_GetBoolParameters(Hproc_handle proc_handle)
+ {
+  return 海康_获取布尔数类型参数( proc_handle);
+ }
+ Herror cHik_GetStringParameters(Hproc_handle proc_handle)
+ {
+  return 海康_获取字符串类型参数( proc_handle);
+ }
